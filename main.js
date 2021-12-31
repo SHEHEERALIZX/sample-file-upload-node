@@ -48,6 +48,6 @@ app.route('/').get((req, res) => {
     return res.end();
 });
 
-const server = app.listen(8000, function () {
+const server = app.listen(process.env.PORT||8000, function () {
     console.log(`Listening on port ${server.address().port}`);
 });
