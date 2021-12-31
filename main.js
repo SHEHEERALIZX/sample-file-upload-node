@@ -8,7 +8,13 @@ app.use(busboy({
     highWaterMark: 2 * 1024 * 1024, // Set 2MiB buffer
 })); // Insert the busboy middle-ware
 
-const uploadPath = path.join(__dirname, 'fu/'); // Register the upload path
+
+
+// process.env.PWD = process.cwd();
+// app.use(express.static(path.join(process.env.PWD, 'public')));
+
+
+const uploadPath = path.join(process.env.PWD, 'fu/'); // Register the upload path
 fs.ensureDir(uploadPath); // Make sure that he upload path exits
 
 
